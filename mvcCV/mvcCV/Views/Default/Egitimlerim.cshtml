@@ -1,0 +1,16 @@
+﻿@using mvcCV.Models.entity
+@model IList<TBLEGİTİM>
+<div class="resume-section-content">
+    @foreach (var item in Model) {
+    <h2 class="mb-5">Eğitimlerim</h2>
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="flex-grow-1">
+            <h3 class="mb-0">@item.BASLIK</h3>
+            <div class="subheading mb-3">@item.ALTBASLIK1</div>
+            <div>@item.ALTBASLIK2</div>
+            <p>@item.GNO</p>
+        </div>
+        <div class="flex-shrink-0"><span class="text-primary">@item.TARİH</span></div>
+    </div>
+    }
+</div>

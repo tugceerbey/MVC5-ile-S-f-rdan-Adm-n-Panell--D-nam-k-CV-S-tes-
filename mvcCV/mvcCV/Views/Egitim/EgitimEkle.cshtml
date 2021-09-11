@@ -1,0 +1,29 @@
+﻿@model mvcCV.Models.entity.TBLEGİTİM
+@{
+    ViewBag.Title = "EgitimEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h4>Yeni Eğitim Bilgisi Ekleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Eğitim Açıklaması")
+    @Html.TextBoxFor(x => x.BASLIK, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BASLIK, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Alt Başlık 1")
+    @Html.TextBoxFor(x => x.ALTBASLIK1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alt Başlık 2")
+    @Html.TextBoxFor(x => x.ALTBASLIK2, new { @class = "form-control" })
+    <br />
+    @Html.Label("GNO(Genel Not Ortalaması)")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.GNO, "", new { @style = "color:blue" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.TARİH, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-info ">Kaydet</button>
+</form>

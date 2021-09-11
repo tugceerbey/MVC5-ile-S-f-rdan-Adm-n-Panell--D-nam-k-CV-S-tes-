@@ -1,0 +1,32 @@
+﻿@using mvcCV.Models.entity
+@model List<TBLADMİN>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br /><br />
+<h2>Admin Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>DÜZENLE</th>
+        <th>KALDIR</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.KULLANICIADİ</td>
+            <td><a href="/Admin/AdminDüzenle/@item.ID" class="btn btn-danger">Düzenle</a></td>
+            <td><a href="/Admin/AdminSil/@item.ID" class="btn btn-warning">Kaldır</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/AdminEkle/" class="btn btn-primary">Yeni Admin Ekle</a>
+
+
+

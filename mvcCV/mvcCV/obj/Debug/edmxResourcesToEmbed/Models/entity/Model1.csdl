@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBCVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBLADMİN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KULLANICIADİ" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SİFRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLDENEYİM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BASLIK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ALTBASLIK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TARİH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLEGİTİM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BASLIK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ALTBASLIK1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ALTBASLIK2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TARİH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLHAKKIMDA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MAİL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RESİM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLİLETİŞİM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADSOYAD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MAİL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="KONU" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MESAJ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TARİH" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TBLÖDÜLLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ACIKLAMA1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMA2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLSERTİFİKA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="TARİH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLYETENEK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YETENEK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ORAN" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="DBCVEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBLADMİN" EntityType="Self.TBLADMİN" />
+    <EntitySet Name="TBLDENEYİM" EntityType="Self.TBLDENEYİM" />
+    <EntitySet Name="TBLEGİTİM" EntityType="Self.TBLEGİTİM" />
+    <EntitySet Name="TBLHAKKIMDA" EntityType="Self.TBLHAKKIMDA" />
+    <EntitySet Name="TBLİLETİŞİM" EntityType="Self.TBLİLETİŞİM" />
+    <EntitySet Name="TBLÖDÜLLER" EntityType="Self.TBLÖDÜLLER" />
+    <EntitySet Name="TBLSERTİFİKA" EntityType="Self.TBLSERTİFİKA" />
+    <EntitySet Name="TBLYETENEK" EntityType="Self.TBLYETENEK" />
+    <EntitySet Name="TblSosyalMedya" EntityType="DBCVModel.TblSosyalMedya" />
+  </EntityContainer>
+  <EntityType Name="TblSosyalMedya">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="İkon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Durum" Type="Boolean" />
+  </EntityType>
+</Schema>

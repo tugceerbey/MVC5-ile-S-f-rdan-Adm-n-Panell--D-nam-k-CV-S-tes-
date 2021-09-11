@@ -1,0 +1,61 @@
+﻿@using mvcCV.Models.entity
+@model List<TBLİLETİŞİM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                      
+                        <div class="card-body">
+                    
+                                <div class="tab-pane" id="timeline">
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="time-label">
+                                            <span class="bg-info">
+                                                @(((DateTime)item.TARİH).ToString("dd-MMM-yyyy"))
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-comments bg-warning"></i>
+                                            <div class="timeline-item">
+                                                <span class="time"><i class="far fa-clock"></i> @item.MAİL</span>
+                                                <h3 class="timeline-header"><a href="#">@item.ADSOYAD</a> @item.KONU</h3>
+                                                <div class="timeline-body">
+                                                   @item.MESAJ
+                                                </div>
+                                              
+                                            </div>
+                                        </div>
+                                    }
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+      
+    </section>
+</body>
+</html>
+
